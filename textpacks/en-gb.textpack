@@ -1,0 +1,24 @@
+#Default language, en-us, en-gb
+#@admin
+oui_player_provider_soundcloud => Soundcloud
+oui_player_soundcloud => Soundcloud player (oui_player_soundcloud)
+oui_player_soundcloud_prefs => Display the Soundcloud player prefs
+oui_player_soundcloud_color => Preferred colour for UI player elements
+oui_player_soundcloud_theme_color => Preferred theme color
+oui_player_soundcloud_text_download_track => Text for the <em>Download</em> link
+oui_player_soundcloud_buying => Enable the <em>Buy</em> button
+oui_player_soundcloud_sharing => Enable sharing features
+oui_player_soundcloud_download => Enable the <em>Download</em> link
+oui_player_soundcloud_hide_related => Hide related tracks
+oui_player_soundcloud_show_reposts => Display reposts
+oui_player_soundcloud_show_playcount => Display the play count
+oui_player_soundcloud_start_track => Start playing at second:
+oui_player_soundcloud_single_active => Stop playing when another Soundcloud player is on
+oui_player_soundcloud_show_user => Display the uploader name
+oui_player_soundcloud_auto_play => Automatic playing
+oui_player_soundcloud_show_artwork => Display the art work
+oui_player_soundcloud_show_comments => Display comments
+oui_player_soundcloud_visual => Display the visual as a player background
+oui_player_soundcloud_width => Player width
+oui_player_soundcloud_height => Player height
+oui_player_soundcloud_ratio => Player ratio by default
