@@ -1,6 +1,6 @@
 {
     "name"        : "oui_player_soundcloud",
-    "description" : "Soundcloud extension for oui_player",
+    "description" : "Soundcloud extension for oui_player v2+",
     "version"     : "1.0.0-beta",
     "type"        : 1,
     "author"      : "Nicolas Morand",

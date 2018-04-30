@@ -8,7 +8,7 @@ h2. Plugin requirements
 oui_player's minimum requirements:
 
 * "Textpattern CMS":http://textpattern.com/ 4.6+.
-* "oui_player":https://github.com/oui-textpattern/oui_player/ 2.+.
+* "oui_player":https://github.com/oui-textpattern/oui_player/ 2+.
 
 h2. Recognised values for the @play@ attribute
 
