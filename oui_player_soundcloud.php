@@ -113,10 +113,6 @@ namespace Oui\Player {
             );
         }
 
-        global $event;
-
-        if (txpinterface === 'admin' && ($event === 'prefs' || $event === 'plugin_prefs.oui_player_soundcloud')) {
-            Soundcloud::getInstance();
-        }
+        register_callback('Oui\Player\Soundcloud::getProvider', 'oui_player', 'plug_providers');
     }
 }
