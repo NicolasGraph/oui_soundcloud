@@ -1,8 +1,8 @@
 #Default language, en-us, en-gb
 #@admin
 oui_player_provider_soundcloud => Soundcloud
-oui_player_soundcloud => Soundcloud player (oui_player_soundcloud)
-oui_player_soundcloud_prefs => Display the Soundcloud player prefs
+oui_player_soundcloud => Soundcloud player
+oui_player_soundcloud_prefs => Display the Soundcloud player preferences
 oui_player_soundcloud_color => Preferred colour for UI player elements
 oui_player_soundcloud_theme_color => Preferred theme color
 oui_player_soundcloud_text_download_track => Text for the <em>Download</em> link

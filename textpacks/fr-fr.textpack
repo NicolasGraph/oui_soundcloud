@@ -1,7 +1,7 @@
 #@language fr-fr
 #@admin
 oui_player_provider_soundcloud => Soundcloud
-oui_player_soundcloud => Lecteur Soundcloud (oui_player_soundcloud)
+oui_player_soundcloud => Lecteur Soundcloud
 oui_player_soundcloud_prefs => Afficher les préférences du lecteur Soundcloud
 oui_player_soundcloud_width => Largeur du lecteur
 oui_player_soundcloud_height => Hauteur du lecteur
