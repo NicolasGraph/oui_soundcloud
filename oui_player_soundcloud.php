@@ -113,6 +113,5 @@ namespace Oui\Player {
             );
         }
 
-        register_callback('Oui\Player\Soundcloud::getProvider', 'oui_player', 'plug_providers');
     }
 }
