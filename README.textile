@@ -1,113 +1,210 @@
 h1. oui_player_soundcloud
 
-An Soundcloud extension for oui_player.
-See the oui_player help for global config/tags informations.
+h2. Introduction
 
-h2. Plugin requirements
+"oui_player_soundcloud":https://github.com/NicolasGraph/oui_player_soundcloud is a "oui_player":https://github.com/NicolasGraph/oui_player v2+ extension to easily embed "Soundcloud":https://soundcloud.go.com/ provided player in "Textpattern":https://textpattern.com/ powered websites.
 
-oui_player's minimum requirements:
+The above platform serves cookies with its player, according to the EU legislation, you should warn your users about these cookies before they are added. This can be done by using "oui_cookie":https://github.com/NicolasGraph/oui_cookie.
 
-* "Textpattern CMS":http://textpattern.com/ 4.6+.
-* "oui_player":https://github.com/oui-textpattern/oui_player/ 2+.
+h3. Plugin requirements
 
-h2. Recognised values for the @play@ attribute
+oui_player_soundcloud's minimum requirements:
 
-* http(s)://(api.)soundcloud.com/…
+* "Textpattern CMS":http://textpattern.com/ v4.6+;
+* "oui_player":https://github.com/NicolasGraph/oui_player v2+;
+* "oui_player_provider":https://github.com/NicolasGraph/oui_player_proivider v1+.
 
-h2. Player size
+h2. Plugin management
+
+h3. Installation
+
+h4. From the admin interface
+
+# "Download":https://github.com/NicolasGraph/oui_player_soundcloud/releases the compiled plugin file or the source to compile a customized file.
+# Paste the content of the compiled plugin file under the "Admin > Plugins":?event=plugin tab and click the _Upload_ button.
+# Confirm the plugin install by clicking the _Install_ button on the plugin preview page.
+# Enable the plugin and click the _Options_ link (or visit the _Preferences_ tab) to set the provider preferences.
+
+h4. Via Composer
+
+After "installing Composer":https://getcomposer.org/doc/00-intro.md…
+
+# Target your project directory:
+@$ cd /path/to/your/textpattern/installation/dir@
+# If it's not already done, lock your version of Txp:
+@$ composer require textpattern/lock:4.6.2@, where @4.6.2@ is the Txp version in use.
+# Install oui_player_soundcloud:
+@$ composer require oui/oui_player_soundcloud@
+
+h3. Update
+
+h4. From the admin interface
+
+# Follow the installation instruction above.
+
+h4. Via Composer
+
+bc. $ composer update oui/oui_player_soundcloud
+
+h3. Uninstall
+
+h4. From the admin interface
+
+# Check the box on the left of the plugin row under the "Admin > Plugins":?event=plugin.
+# open the select list at the bottom of the plugins table and choose _Delete_.
+# confirm the plugin deletion.
+
+h4. Via Composer
+
+bc. $ composer remove oui/oui_player_soundcloud
+
+h2. Tags and parameters
+
+h3. oui_soundcloud vs oui_player
+
+While the @<txp:oui_player />@ tag is able to embed any player from any extension-related provider, the @<txp:oui_soundcloud />@ tag is a shortcut to embed Soundcloud player only. It is strictly equivalent to @<txp:oui_player provider="soundcloud" />@.
+
+Check the "oui_player":https://github.com/NicolasGraph/oui_player documentation for more informations.
+
+h4. Recognised values for the @play@ attribute
+
+* http(s)://(api.)soundcloud.com/….
+
+When using the <code>oui_player</code> tag (vs <code>oui_soundcloud</code>), the right provider needs to be set if the <code>play</code> value or its field related one is an ID. It is optional, but can fasten the rendering, if the value is an URL.
+
+h4. Player customization
+
+h5. Preferences vs attributes
+
+While some player customization elements, related to the media to play, should be used through attributes, these used as global settings should preferrably be set through the plugin preferences to avoid a massive use of tag attributes.
+
+Of course, it is still possible to override a preference value via an attribute when needed.
+
+h5. Size
 
 - @width@ :=
+Integer; initially set to @100%@.
 The width of the player in pixels (OK, pourcentage works also…).
-*Default:* related plugin pref
-*Initial:* @100%@
-*valid:* Integer =:
+*Default:* related plugin pref =:
 - @height@ :=
-The height of the player in pixels (if @visual="true"@ Soundcloud width is usually @450@).
-*Default:* related plugin pref
-*Initial:* @166@ (alt provided height is @450@)
-*valid:* Integer =:
+Integer; initially set to @166@ (alt height is @450@, usually when @visual="true"@).
+The height of the player in pixels =:
 - @ratio@ :=
-The ratio used to calculate the missing value for the width or the height.
-*Default:* related plugin pref
-*Initial:* none
-*valid:* integer[@:@]integer =:
+Integer[@:@]integer; initially not set.
+The ratio used to calculate the missing value for the width or the height. =:
+- @responsive@ :=
+@true@ or @false@; initially set to @false@.
+Adapts the final player size from the provided width and/or height and/or ratio values to fit the container width.
+Wraps the player and adds some styles.
+The related preference is a generic oui_player preference; it is applied to all providers or none. =:
 
-h2. Player parameters (aplhabetical order)
+h5. Parameters
 
-Some prefs/attributes can conditionate the behavior of others (e.g. @visual="true"@ desactivates @color@).
+Some prefs/attributes can conditionate the behavior of others (e.g. <code>visual="true"</code> desactivates <code>color</code>).
 
 - @auto_play@ :=
-Whether to play after loading or not.
-*Default:* related plugin pref
-*Initial:* @false@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @false@.
+Whether to play after loading or not. =:
 - @buying@ :=
-Whether to display the _Buy_ button or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to display the _Buy_ button or not. =:
 - @color@ :=
-Changes the colour of the user interface elements.
-*Default:* related plugin pref
-*Initial:* @ff8800@
-*valid:* a hexa color value =:
+Hexadecimal color value; initially set to @#ff8800@.
+Changes the colour of the user interface elements. =:
 - @download@ :=
-Whether to display the _Download_ button or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to display the _Download_ button or not. =:
 - @hide_related@ :=
-Whether to display related tracks or not.
-*Default:* related plugin pref
-*Initial:* @false@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @false@.
+Whether to display related tracks or not. =:
 - @sharing@ :=
-Whether to enable the sharing features or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to enable the sharing features or not. =:
 - @show_artwork@ :=
-Whether to display the artwork or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@;
+Whether to display the artwork or not. =:
 - @show_comments@ :=
-Whether to display comments or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to display comments or not. =:
 - @show_reposts@ :=
-Whether to display reposts or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to display reposts or not. =:
 - @show_playcount@ :=
-Whether to display the playcount or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to display the playcount or not. =:
 - @show_user@ :=
-Whether to display the uploader or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to display the uploader or not. =:
 - @single_active@ :=
-Whether to stop playing while another player is on or not.
-*Default:* related plugin pref
-*Initial:* @true@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @true@.
+Whether to stop playing while another player is on or not. =:
 - @start_track@ :=
-Specifies the time (in seconds) when the track should start playing.
-*Default:* related plugin pref
-*Initial:* @0@
-*valid:* an integer =:
+Integer; initially set to @0@;
+Specifies the time (in seconds) when the track should start playing. =:
 - @theme_color@ :=
-Changes the color of the player theme.
-*Default:* related plugin pref
-*Initial:* @ff3300@
-*valid* a hexa color value =:
+Hexadecimal color value; initially set to @#ff3300@.
+Changes the color of the player theme. =:
 - @visual@ :=
-Whether to display the artwork as a background or not.
-*Default:* related plugin pref
-*Initial:* @false@
-*valid:* @true@ or @false@ =:
+@true@ or @false@; initially set to @false@.
+Whether to display the artwork as a background or not. =:
+
+h5. Sets
+
+* Album:
+** big:
+*** @height="450"@;
+*** @visual="true"@.
+** medium:
+*** @height="300"@.
+* track :
+** big:
+*** @height="300"@;
+*** @visual="true"@.
+** medium:
+*** initial values.
+
+h3. oui_if_soundcloud vs oui_if_player
+
+p. While the @<txp:oui_if_player>…</txp:oui_if_player>@ tag is able to check an URL against any URL from any extension-related provider, the @<txp:oui_if_soundcloud>…</txp:oui_if_soundcloud>@ tag is a shortcut to check an URL against Soundcloud related URL schemes only. It is strictly equivalent to @<txp:oui_if_player provider="soundcloud">…</txp:oui_if_player>@.
+
+Check the "oui_player":https://github.com/NicolasGraph/oui_player documentation for more informations.
+
+h2. Examples
+
+h3. Embed a player using the preference values
+
+bc(language-markup). <txp:oui_player />
+
+"oui_player":https://github.com/NicolasGraph/oui_player preference related field value: @https://soundcloud.com/uiceheidd/lucid-dreams-forget-me@.
+
+h3. Conditionally embed a player using attributes
+
+bc(language-markup).. <txp:oui_if_player provider="soundcloud" play="https://soundcloud.com/uiceheidd/lucid-dreams-forget-me">
+    <txp:oui_player height="300" />
+</txp:oui_if_player>
+
+p. …or:
+
+bc(language-markup).. <txp:oui_if_soundcloud play="https://soundcloud.com/uiceheidd/lucid-dreams-forget-me">
+    <txp:oui_soundcloud height="300" />
+</txp:oui_if_soundcloud>
+
+h2. Credits
+
+h3. Author
+
+"Nicolas Morand":https://twitter.com/NicolasGraph
+_Thank you to the Textpattern community and the core team._
+
+h3. License
+
+This plugin is distributed under "GPL v2.0":https://www.gnu.org/licenses/gpl-2.0.txt.
+
+oui_player_soundcloud version 1.0.0, Copyright (C) 2018 Nicolas Morand
+This Textpattern plugin comes with ABSOLUTELY "NO WARRANTY":https://www.gnu.org/licenses/gpl-2.0.html#section11.
+This is free software, and you are welcome to redistribute it "under certain conditions":https://www.gnu.org/licenses/gpl-2.0.html#SEC3.
+
+h3. Changelog
+
+* *oui_player_soundcloud v1.0.0-beta* (2018-06-24)
+* *oui_player v1.3.0* (2017-05-24)
