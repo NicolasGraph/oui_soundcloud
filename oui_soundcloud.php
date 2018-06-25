@@ -1,11 +1,11 @@
 <?php
 
 /*
- * This file is part of oui_player_soundcloud,
+ * This file is part of oui_soundcloud,
  * a oui_player v2+ extension to easily embed
  * Soundcloud customizable audio players in Textpattern CMS.
  *
- * https://github.com/NicolasGraph/oui_player_soundcloud
+ * https://github.com/NicolasGraph/oui_soundcloud
  *
  * Copyright (C) 2018 Nicolas Morand
  *

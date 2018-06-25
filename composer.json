@@ -1,5 +1,5 @@
 {
-    "name": "oui/oui_player_soundcloud",
+    "name": "oui/oui_soundcloud",
     "description": "Soundcloud HTML extension for oui_player",
     "keywords": [
         "textpattern",
@@ -8,7 +8,7 @@
         "audio",
         "soundcloud"
     ],
-    "homepage": "https://github.com/NicolasGraph/oui_player_soundcloud",
+    "homepage": "https://github.com/NicolasGraph/oui_soundcloud",
     "license": "GPL-2.0-only",
     "type": "textpattern-plugin",
     "authors": [
@@ -19,8 +19,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/NicolasGraph/oui_player_soundcloud/issues",
-        "source": "https://github.com/NicolasGraph/oui_player_soundcloud"
+        "issues": "https://github.com/NicolasGraph/oui_soundcloud/issues",
+        "source": "https://github.com/NicolasGraph/oui_soundcloud"
     },
     "require": {
         "textpattern/lock": "4.6.*",
