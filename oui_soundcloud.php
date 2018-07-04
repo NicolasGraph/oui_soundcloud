@@ -44,15 +44,9 @@ namespace Oui {
             protected static $src = '//w.soundcloud.com/';
             protected static $glue = array('player/?url=', '?', '&amp;');
             protected static $dims = array(
-                'width'          => array(
-                    'default' => '100%',
-                ),
-                'height'         => array(
-                    'default' => '166',
-                ),
-                'ratio'          => array(
-                    'default' => '',
-                ),
+                'width'  => '100%',
+                'height' => '166',
+                'ratio'  => '',
             );
             protected static $params = array(
                 'auto_play'      => array(
