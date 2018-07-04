@@ -119,13 +119,3 @@ namespace Oui {
         }
     }
 }
-
-namespace {
-    function oui_soundcloud($atts) {
-        return oui_player(array_merge(array('provider' => 'soundcloud'), $atts));
-    }
-
-    function oui_if_soundcloud($atts, $thing) {
-        return oui_if_player(array_merge(array('provider' => 'soundcloud'), $atts), $thing);
-    }
-}
