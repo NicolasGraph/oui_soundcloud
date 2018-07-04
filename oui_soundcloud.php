@@ -36,10 +36,8 @@ namespace Oui {
         class Soundcloud extends Provider
         {
             protected static $patterns = array(
-                'audio' => array(
-                    'scheme' => '#((http|https)://(api\.)?soundcloud\.com/[\S]+)#i',
-                    'id'     => '1',
-                ),
+                'scheme' => '#((http|https)://(api\.)?soundcloud\.com/[\S]+)#i',
+                'id'     => '1',
             );
             protected static $src = '//w.soundcloud.com/';
             protected static $glue = array('player/?url=', '?', '&amp;');
