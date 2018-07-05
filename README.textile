@@ -101,6 +101,7 @@ The related preference is a generic oui_player preference; it is applied to all 
 h5. Parameters
 
 Some prefs/attributes can conditionate the behavior of others (e.g. <code>visual="true"</code> desactivates <code>color</code>).
+From Txp 4.7, paramaters accepting @true@ and @false@ as valid values can be enable through boolean/valueless attributes.
 
 - @auto_play@ :=
 @true@ or @false@; initially set to @false@.
