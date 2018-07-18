@@ -35,6 +35,7 @@ namespace Oui {
 
         class Soundcloud extends Provider
         {
+            protected static $mediaType = 'audio';
             protected static $patterns = array(
                 'scheme' => '#((http|https)://(api\.)?soundcloud\.com/[\S]+)#i',
                 'id'     => '1',
