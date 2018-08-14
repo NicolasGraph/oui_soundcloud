@@ -29,86 +29,85 @@
  * @package Oui\Player
  */
 
-namespace Oui {
+namespace Oui;
 
-    if (class_exists('Oui\Provider')) {
+if (class_exists('Oui\Provider')) {
 
-        class Soundcloud extends Provider
-        {
-            protected static $mediaType = 'audio';
-            protected static $patterns = array(
-                'scheme' => '#((http|https)://(api\.)?soundcloud\.com/[\S]+)#i',
-                'id'     => '1',
-            );
-            protected static $src = '//w.soundcloud.com/';
-            protected static $glue = array('player/?url=', '?', '&amp;');
-            protected static $dims = array(
-                'width'  => '100%',
-                'height' => '166',
-                'ratio'  => '',
-            );
-            protected static $params = array(
-                'auto_play'      => array(
-                    'default' => 'false',
-                    'valid'   => array('true', 'false'),
-                ),
-                'buying'         => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'color'          => array(
-                    'default' => '#ff8800',
-                    'valid'   => 'color',
-                ),
-                'download'       => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'hide_related'   => array(
-                    'default' => 'false',
-                    'valid'   => array('true', 'false'),
-                ),
-                'sharing'        => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'show_artwork'   => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'show_comments'  => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'show_playcount' => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'show_reposts'   => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'show_user'      => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'single_active'  => array(
-                    'default' => 'true',
-                    'valid'   => array('true', 'false'),
-                ),
-                'start_track'    => array(
-                    'default' => '0',
-                    'valid'   => 'number',
-                ),
-                'theme_color'    => array(
-                    'default' => '#ff3300',
-                    'valid'   => 'color',
-                ),
-                'visual'         => array(
-                    'default' => 'false',
-                    'valid'   => array('true', 'false'),
-                ),
-            );
-        }
+    class Soundcloud extends Provider
+    {
+        protected static $srcBase = '//w.soundcloud.com/';
+        protected static $srcGlue = array('player/?url=', '?', '&amp;');
+        protected static $iniDims = array(
+            'width'  => '100%',
+            'height' => '166',
+            'ratio'  => '',
+        );
+        protected static $iniParams = array(
+            'auto_play'      => array(
+                'default' => 'false',
+                'valid'   => array('true', 'false'),
+            ),
+            'buying'         => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'color'          => array(
+                'default' => '#ff8800',
+                'valid'   => 'color',
+            ),
+            'download'       => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'hide_related'   => array(
+                'default' => 'false',
+                'valid'   => array('true', 'false'),
+            ),
+            'sharing'        => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'show_artwork'   => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'show_comments'  => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'show_playcount' => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'show_reposts'   => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'show_user'      => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'single_active'  => array(
+                'default' => 'true',
+                'valid'   => array('true', 'false'),
+            ),
+            'start_track'    => array(
+                'default' => '0',
+                'valid'   => 'number',
+            ),
+            'theme_color'    => array(
+                'default' => '#ff3300',
+                'valid'   => 'color',
+            ),
+            'visual'         => array(
+                'default' => 'false',
+                'valid'   => array('true', 'false'),
+            ),
+        );
+        protected static $mediaType = 'audio';
+        protected static $mediaPatterns = array(
+            'scheme' => '#(https?://(api\.)?soundcloud\.com/[\S]+)#i',
+            'id'     => '1',
+        );
     }
 }
