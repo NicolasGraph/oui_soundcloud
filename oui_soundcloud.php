@@ -38,9 +38,13 @@ if (class_exists('Oui\Provider')) {
         protected static $srcBase = '//w.soundcloud.com/';
         protected static $srcGlue = array('player/?url=', '?', '&amp;');
         protected static $iniDims = array(
-            'width'  => '100%',
-            'height' => '166',
-            'ratio'  => '',
+            'width'      => '100%',
+            'height'     => '166',
+            'ratio'      => '',
+            'responsive' => array(
+                'default' => 'false',
+                'valid'   => array('true', 'false'),
+            ),
         );
         protected static $iniParams = array(
             'auto_play'      => array(
