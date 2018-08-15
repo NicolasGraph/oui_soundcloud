@@ -22,3 +22,4 @@ oui_player_soundcloud_visual => Display the visual as a player background
 oui_player_soundcloud_width => Player width
 oui_player_soundcloud_height => Player height
 oui_player_soundcloud_ratio => Player ratio by default
+oui_player_soundcloud_responsive => Render responsive players from the provided dimensions
