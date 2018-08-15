@@ -1,5 +1,11 @@
 h1. oui_soundcloud
 
+* "Introduction":#introduction
+* "Plugin management":#plugin-management
+* "Tags and parameters":#tags-and-parameters
+* "Examples":#examples
+* "Credits":#credits
+
 h2. Introduction
 
 "oui_soundcloud":https://github.com/NicolasGraph/oui_soundcloud is a "oui_player":https://github.com/NicolasGraph/oui_player v2+ extension to easily embed "Soundcloud":https://soundcloud.go.com/ provided player in "Textpattern":https://textpattern.com/ powered websites.
