@@ -33,8 +33,11 @@ namespace Oui;
 
 if (class_exists('Oui\Player\Provider')) {
 
-    class Soundcloud extends Player\Provider
+    class Soundcloud extends Player\Oembed
     {
+        protected static $endPoint = 'https://soundcloud.com/oembed.json?url=';
+        protected static $URLBase = '';
+
         protected static $srcBase = '//w.soundcloud.com/';
         protected static $srcGlue = array('player/?url=', '?', '&amp;');
         protected static $iniDims = array(
